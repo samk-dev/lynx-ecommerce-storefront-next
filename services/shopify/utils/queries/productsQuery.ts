@@ -2,9 +2,9 @@ const productsQuery = `
 	query getProducts($first: Int = 250) {
 		products(first: $first) {
 			pageInfo {
-			hasNextPage
-			hasPreviousPage
-		}
+				hasNextPage
+				hasPreviousPage
+			}
 			edges {
 				node {
 					id

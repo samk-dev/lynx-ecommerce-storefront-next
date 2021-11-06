@@ -1,11 +1,16 @@
+import productsQuery from "../utils/queries/productsQuery";
+
 const fetchProducts = async () => {
-  const url = "https://jsonplaceholder.typicode.com/todos";
+  const url = "http://localhost:4000/graphql";
 
   const response = await fetch(url, {
-    method: "GET",
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      query: productsQuery,
+    }),
   });
 
   const data = await response.json();
