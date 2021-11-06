@@ -1,11 +1,13 @@
 import type { InferGetStaticPropsType } from 'next'
+import getProducts from '../services/shopify/products/ProductsService'
 
 export async function getStaticProps() {
 
-  const products = [1,2,3] 
-
+  const products = await getProducts()
   return {
-    props: {products},
+    props: { 
+      products
+    },
     revalidate: 4 * 60 * 60
   }
 }
@@ -15,7 +17,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <div>
-     { products } 
+     { JSON.stringify(products) } 
     </div>
   )
 }
