@@ -12,6 +12,7 @@ const fetchProducts = async () => {
       query: productsQuery,
     }),
   });
+
   const data = await response.json();
 
   return { data };
@@ -19,6 +20,7 @@ const fetchProducts = async () => {
 
 const getProducts = async (): Promise<any[]> => {
   const products = await fetchProducts();
+
   return products.data;
 };
 

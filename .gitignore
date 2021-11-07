@@ -69,6 +69,7 @@ $RECYCLE.BIN/
 
 # misc
 *.pem
+.nova
 
 # dependencies
 /node_modules
