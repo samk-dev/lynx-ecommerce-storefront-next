@@ -1,6 +1,7 @@
 import shopifyApi from "../utils/shopifyApi";
 import { ProductConnection } from "../schema.d";
 import productsQuery from "../utils/queries/productsQuery";
+import normalizeProduct from "../utils/normalizeProduct";
 
 type ReturnType = {
   products: ProductConnection;
@@ -14,7 +15,7 @@ const getProducts = async (): Promise<any> => {
 
   const products =
     data.products.edges.map(({ node: product }) => {
-      return product;
+      return normalizeProduct(product);
     }) ?? [];
 
   return products;
