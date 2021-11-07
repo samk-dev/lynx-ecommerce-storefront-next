@@ -12,7 +12,6 @@ const fetchProducts = async () => {
       query: productsQuery,
     }),
   });
-
   const data = await response.json();
 
   return { data };
