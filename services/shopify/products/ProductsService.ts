@@ -12,7 +12,12 @@ const getProducts = async (): Promise<any> => {
     query: productsQuery,
   });
 
-  return data.products;
+  const products =
+    data.products.edges.map(({ node: product }) => {
+      return product;
+    }) ?? [];
+
+  return products;
 };
 
 export default getProducts;
