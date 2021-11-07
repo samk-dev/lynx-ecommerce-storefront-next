@@ -1,21 +1,22 @@
-import type { InferGetStaticPropsType } from 'next'
+import type { InferGetStaticPropsType } from "next";
+import getProducts from "@shopify/products/ProductsService";
 
 export async function getStaticProps() {
-
-  const products = [1,2,3] 
-
+  const products = await getProducts();
   return {
-    props: {products},
-    revalidate: 4 * 60 * 60
-  }
+    props: {
+      products,
+    },
+    revalidate: 4 * 60 * 60,
+  };
 }
 
 export default function Home({
-  products
+  products,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <div>
-     { products } 
+      <samp>{JSON.stringify(products)}</samp>
     </div>
-  )
+  );
 }
