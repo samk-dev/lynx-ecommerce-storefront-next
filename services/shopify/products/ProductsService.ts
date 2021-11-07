@@ -1,8 +1,7 @@
-import shopifyApi from "../utils/shopifyApi";
+import { shopifyApi, normalizeProduct } from "../utils";
 import { ProductConnection } from "../schema.d";
-import productsQuery from "../utils/queries/productsQuery";
+import { productsQuery } from "../queries";
 import { Product } from "@common/types/product";
-import { normalizeProduct } from "../utils/normalizeProduct";
 
 type ReturnType = {
   products: ProductConnection;
