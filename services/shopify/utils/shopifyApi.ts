@@ -3,7 +3,12 @@ interface ApiParams {
   query: string;
 }
 
-const shopifyApi = async ({ url, query }: ApiParams) => {
+type Response<T> = { data: T };
+
+const shopifyApi = async <T>({
+  url,
+  query,
+}: ApiParams): Promise<Response<T>> => {
   const response = await fetch(url, {
     method: "POST",
     headers: {
