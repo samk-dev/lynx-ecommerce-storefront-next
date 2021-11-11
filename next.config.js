@@ -2,6 +2,9 @@
 const { ecommerceDriverConfig } = require('./services/common/appConfig');
 
 module.exports = ecommerceDriverConfig({
+    shopDriver: {
+        name: process.env.SHOP_DRIVER,
+    },
     reactStrictMode: true,
 });
 
