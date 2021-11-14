@@ -1,7 +1,7 @@
-import { shopifyApi, normalizeProduct } from "../utils";
-import { ProductConnection } from "../schema.d";
-import { productsQuery } from "../queries";
-import { Product } from "@common/types/product";
+import { shopifyApi, normalizeProduct } from '../utils';
+import { ProductConnection } from '../schema.d';
+import { productsQuery } from '../queries';
+import { Product } from '@common/types/product';
 
 type ReturnType = {
   products: ProductConnection;
@@ -9,7 +9,7 @@ type ReturnType = {
 
 const getProducts = async (): Promise<Product[]> => {
   const { data } = await shopifyApi<ReturnType>({
-    url: "http://localhost:4000/graphql",
+    url: 'http://localhost:4000/graphql',
     query: productsQuery,
   });
 
