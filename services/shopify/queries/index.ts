@@ -1,1 +1,1 @@
-export { default as productsQuery } from "./productsQuery";
+export { default as productsQuery } from './productsQuery';
