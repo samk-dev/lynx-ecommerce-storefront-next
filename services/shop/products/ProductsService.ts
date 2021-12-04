@@ -1,7 +1,7 @@
-import { shopifyApi, normalizeProduct } from '../utils';
-import { ProductConnection } from '../schema.d';
-import { productsQuery } from '../queries';
-import { Product } from '@common/types/product';
+import { shopifyApi, normalizeProduct } from '@shopApi/utils';
+import { ProductConnection } from '@shopApi/schema.d';
+import { productsQuery } from '@shopApi/queries';
+import { Product } from '@shop/types/product';
 
 type ReturnType = {
   products: ProductConnection;

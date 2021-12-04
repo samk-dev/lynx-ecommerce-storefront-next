@@ -21,14 +21,20 @@ function ecommerceDriverConfig(defaultConfig = {}) {
     );
   }
 
-  const driverNextconfig = require(path.join('../', driver, 'next.config'));
+  const driverNextconfig = require(path.join(
+    '../shop/api',
+    driver,
+    'next.config'
+  ));
   const config = merge(defaultConfig, driverNextconfig);
 
   const tsPath = path.join(process.cwd(), 'tsconfig.json');
   const tsConfig = require(tsPath);
 
-  tsConfig.compilerOptions.paths['@shop'] = [`services/${driver}`];
-  tsConfig.compilerOptions.paths['@shop/*'] = [`services/${driver}/*`];
+  tsConfig.compilerOptions.paths['@shopApi'] = [`services/shop/api/${driver}`];
+  tsConfig.compilerOptions.paths['@shopApi/*'] = [
+    `services/shop/api/${driver}/*`,
+  ];
 
   fs.writeFileSync(
     tsPath,

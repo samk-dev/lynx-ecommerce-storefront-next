@@ -16,10 +16,16 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@pages": ["pages"],
+      "@pages/*": ["pages/*"],
       "@common": ["services/common"],
       "@common/*": ["services/common/*"],
-      "@shop": ["services/shopify"],
-      "@shop/*": ["services/shopify/*"]
+      "@shopApi": ["services/shop/api/shopify"],
+      "@shopApi/*": ["services/shop/api/shopify/*"],
+      "@shop": ["services/shop"],
+      "@shop/*": ["services/shop/*"],
+      "@products": ["services/shop/products"],
+      "@products/*": ["services/shop/products/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
