@@ -1,6 +1,6 @@
 import type { InferGetStaticPropsType } from 'next';
 import { getConfig } from '@shopApi/config';
-import LayoutDefault from '@layout/LayoutDefault';
+import LayoutDefault from '@layouts/LayoutDefault';
 import getProducts from '@shop/products/ProductsService';
 
 export async function getStaticProps() {
