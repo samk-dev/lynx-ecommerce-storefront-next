@@ -25,7 +25,9 @@
       "@shopApi": ["services/shop/api/shopify"],
       "@shopApi/*": ["services/shop/api/shopify/*"],
       "@shop": ["services/shop"],
-      "@shop/*": ["services/shop/*"]
+      "@shop/*": ["services/shop/*"],
+      "@styles": ["styles"],
+      "@styles/*": ["styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
