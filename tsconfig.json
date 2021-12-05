@@ -16,6 +16,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@layout": ["layout"],
+      "@layout/*": ["layout/*"],
       "@pages": ["pages"],
       "@pages/*": ["pages/*"],
       "@common": ["services/common"],
