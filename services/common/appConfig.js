@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const merge = require('deepmerge');
 const prettier = require('prettier');
-const allowedDrivers = ['shopify', 'woocommerce'];
 
 function ecommerceDriverConfig(defaultConfig = {}) {
   const driver = defaultConfig?.shop?.driver;
@@ -13,22 +12,20 @@ function ecommerceDriverConfig(defaultConfig = {}) {
     );
   }
 
-  if (!allowedDrivers.includes(driver)) {
-    throw new Error(
-      `The ${driver} is not a valid driver. please use one of ${allowedDrivers.join(
-        ', '
-      )}`
-    );
-  }
-
-  const driverNextconfig = require(path.join('../', driver, 'next.config'));
+  const driverNextconfig = require(path.join(
+    '../shop/api',
+    driver,
+    'next.config'
+  ));
   const config = merge(defaultConfig, driverNextconfig);
 
   const tsPath = path.join(process.cwd(), 'tsconfig.json');
   const tsConfig = require(tsPath);
 
-  tsConfig.compilerOptions.paths['@shop'] = [`services/${driver}`];
-  tsConfig.compilerOptions.paths['@shop/*'] = [`services/${driver}/*`];
+  tsConfig.compilerOptions.paths['@shopApi'] = [`services/shop/api/${driver}`];
+  tsConfig.compilerOptions.paths['@shopApi/*'] = [
+    `services/shop/api/${driver}/*`,
+  ];
 
   fs.writeFileSync(
     tsPath,

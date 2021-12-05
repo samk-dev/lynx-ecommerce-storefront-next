@@ -1,14 +1,9 @@
-interface ApiParams {
-  url: string;
-  query: string;
-}
+import { ApiParams, ApiReturnType } from '../types/api';
 
-type Response<T> = { data: T };
-
-const shopifyApi = async <T>({
+const fetchApi = async <T>({
   url,
   query,
-}: ApiParams): Promise<Response<T>> => {
+}: ApiParams): Promise<ApiReturnType<T>> => {
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -28,4 +23,4 @@ const shopifyApi = async <T>({
   return { data };
 };
 
-export default shopifyApi;
+export default fetchApi;
