@@ -1,5 +1,6 @@
 import type { InferGetStaticPropsType } from 'next';
 import { getConfig } from '@shopApi/config';
+import LayoutDefault from '@layout/LayoutDefault';
 import getProducts from '@shop/products/ProductsService';
 
 export async function getStaticProps() {
@@ -18,8 +19,10 @@ export default function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
-    <div>
-      <samp>{products}</samp>
-    </div>
+    <LayoutDefault>
+      <div>
+        <samp>{products}</samp>
+      </div>
+    </LayoutDefault>
   );
 }
