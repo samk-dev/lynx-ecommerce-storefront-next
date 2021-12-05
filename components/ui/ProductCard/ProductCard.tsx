@@ -16,8 +16,8 @@ const ProductCard = ({ product }: Props) => {
         <div className={css.cardProduct}>
           {product.images && (
             <Image
-              src={fallbackImg}
-              alt={product.images[0].alt}
+              src={product.images[0].url ?? fallbackImg}
+              alt={product.images[0].alt ?? 'placeholder image'}
               width={540}
               height={540}
               quality="85"
