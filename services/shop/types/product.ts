@@ -1,3 +1,9 @@
+import { ProductConnection } from '@shopApi/schema.d';
+
+export type ProductsResponseType = {
+  products: ProductConnection;
+};
+
 export interface ProductImage {
   url: string;
   alt?: string;

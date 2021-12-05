@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const merge = require('deepmerge');
 const prettier = require('prettier');
-const allowedDrivers = ['shopify', 'woocommerce'];
 
 function ecommerceDriverConfig(defaultConfig = {}) {
   const driver = defaultConfig?.shop?.driver;
@@ -10,14 +9,6 @@ function ecommerceDriverConfig(defaultConfig = {}) {
   if (!driver) {
     throw new Error(
       'Shop driver name is missing, please provide a valid driver name in your .env.development file'
-    );
-  }
-
-  if (!allowedDrivers.includes(driver)) {
-    throw new Error(
-      `The ${driver} is not a valid driver. please use one of ${allowedDrivers.join(
-        ', '
-      )}`
     );
   }
 

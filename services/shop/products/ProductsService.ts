@@ -1,15 +1,11 @@
-import { shopifyApi, normalizeProduct } from '@shopApi/utils';
-import { ProductConnection } from '@shopApi/schema.d';
+import { ApiConfig } from '@shopApi/types/api';
+import { Product, ProductsResponseType } from '@shop/types/product';
 import { productsQuery } from '@shopApi/queries';
-import { Product } from '@shop/types/product';
+import { normalizeProduct } from '@shopApi/utils';
 
-type ReturnType = {
-  products: ProductConnection;
-};
-
-const getProducts = async (): Promise<Product[]> => {
-  const { data } = await shopifyApi<ReturnType>({
-    url: 'http://localhost:4000/graphql',
+const getProducts = async (config: ApiConfig): Promise<Product[]> => {
+  const { data } = await config.fetch<ProductsResponseType>({
+    url: config.apiUrl,
     query: productsQuery,
   });
 
