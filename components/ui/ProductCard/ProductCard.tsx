@@ -25,6 +25,9 @@ const ProductCard = ({ product }: Props) => {
             />
           )}
           <h3>{product.title}</h3>
+          <span>
+            {product.price.value} {product.price.currencyCode}
+          </span>
         </div>
       </a>
     </Link>
