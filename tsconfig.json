@@ -16,6 +16,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@assets": ["assets"],
+      "@assets/*": ["assets/*"],
       "@layouts": ["layouts"],
       "@layouts/*": ["layouts/*"],
       "@pages": ["pages"],
