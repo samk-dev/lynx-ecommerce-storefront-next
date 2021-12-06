@@ -1,0 +1,23 @@
+.header {
+  @apply py-6;
+
+  &Content {
+    @apply flex flex-row justify-between;
+  }
+
+  &Logo {
+    h1 {
+      @apply -mb-2 text-xl font-bold;
+    }
+
+    span {
+      @apply text-xs;
+    }
+  }
+
+  &Navbar {
+    a:not(:last-child) {
+      @apply mr-3;
+    }
+  }
+}

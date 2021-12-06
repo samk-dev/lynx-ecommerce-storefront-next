@@ -1,0 +1,11 @@
+.iconList {
+  @apply flex flex-row;
+
+  &Item {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      @apply mr-3;
+    }
+  }
+}
