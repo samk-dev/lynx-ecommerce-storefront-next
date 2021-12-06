@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import css from './Grid.module.css';
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode[] | ReactNode;
 }
 
 const Grid = ({ children }: Props) => {

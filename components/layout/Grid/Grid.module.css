@@ -1,0 +1,15 @@
+.gridBlock {
+  @apply grid grid-cols-1;
+
+  @screen sm {
+    @apply grid-cols-2 grid-rows-2 gap-2;
+  }
+
+  @screen md {
+    @apply grid-cols-3 grid-rows-2 gap-2;
+  }
+
+  > * {
+    @apply row-span-1 overflow-hidden;
+  }
+}

@@ -9,12 +9,18 @@ export interface ProductImage {
   alt?: string;
 }
 
+export interface ProductPrice {
+  value: number;
+  currencyCode: string;
+}
+
 export interface Product {
   id: string;
   title: string;
   slug: string;
   vendor: string;
   description: string;
+  price: ProductPrice;
   path: string;
   images?: ProductImage[];
 }

@@ -1,9 +1,9 @@
 import type { InferGetStaticPropsType } from 'next';
 import { getConfig } from '@shopApi/config';
-import LayoutDefault from '@layouts/default/LayoutDefault';
+import { LayoutDefault } from '@layouts';
+import { Container, Grid } from '@components/layout';
+import { ProductCard } from '@components/ui';
 import getProducts from '@shop/products/ProductsService';
-import Grid from '@components/ui/Grid/Grid';
-import ProductCard from '@components/ui/ProductCard/ProductCard';
 
 export async function getStaticProps() {
   const config = getConfig();
@@ -22,11 +22,13 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <LayoutDefault>
-      <Grid>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </Grid>
+      <Container htmlTag={'section' as any}>
+        <Grid>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </Grid>
+      </Container>
     </LayoutDefault>
   );
 }
