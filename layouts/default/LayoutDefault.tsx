@@ -1,5 +1,6 @@
 import css from './LayoutDefault.module.css';
 import { LayoutDefaultProps } from '../types';
+import { Footer } from '@components/layout';
 
 const LayoutDefault = ({ children }: LayoutDefaultProps) => {
   return (
@@ -10,6 +11,7 @@ const LayoutDefault = ({ children }: LayoutDefaultProps) => {
           {children}
         </div>
       </main>
+      <Footer />
     </>
   );
 };

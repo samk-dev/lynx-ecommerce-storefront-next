@@ -1,7 +1,8 @@
 import type { InferGetStaticPropsType } from 'next';
 import { getConfig } from '@shopApi/config';
 import { LayoutDefault } from '@layouts';
-import { Container, Grid, ProductCard } from '@components/ui';
+import { Container, Grid } from '@components/layout';
+import { ProductCard } from '@components/ui';
 import getProducts from '@shop/products/ProductsService';
 
 export async function getStaticProps() {
