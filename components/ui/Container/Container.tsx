@@ -1,12 +1,21 @@
 import css from './Container.module.css';
-import { ReactNode } from 'react';
+import {
+  ComponentType,
+  FunctionComponent,
+  HTMLAttributes,
+  ReactNode,
+} from 'react';
 
 interface Props {
   children: ReactNode[] | ReactNode;
+  htmlTag?: ComponentType<HTMLAttributes<HTMLElement>>;
 }
 
-const Container = ({ children }: Props) => {
-  return <div className={css.container}>{children}</div>;
+const Container: FunctionComponent<Props> = ({
+  children,
+  htmlTag: HtmlTag = 'div',
+}) => {
+  return <HtmlTag className={css.container}>{children}</HtmlTag>;
 };
 
 export default Container;

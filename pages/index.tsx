@@ -21,7 +21,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <LayoutDefault>
-      <Container>
+      <Container htmlTag={'section' as any}>
         <Grid>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
