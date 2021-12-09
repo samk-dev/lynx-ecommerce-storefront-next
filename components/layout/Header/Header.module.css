@@ -2,7 +2,7 @@
   @apply py-6;
 
   &Content {
-    @apply flex flex-row justify-between;
+    @apply flex flex-row justify-between items-center;
   }
 
   &Logo {

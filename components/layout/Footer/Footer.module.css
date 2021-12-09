@@ -1,3 +1,7 @@
 .footer {
   @apply py-6;
+
+  &Copy {
+    @apply text-center;
+  }
 }
