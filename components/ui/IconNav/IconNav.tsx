@@ -10,7 +10,7 @@ const IconNav = () => {
           <IconBag />
         </li>
         <li className={css.iconListItem}>
-          <Link href="/">
+          <Link href="/wishlist">
             <a>
               <IconHeart />
             </a>

@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <section className={css.footer}>
       <Container>
-        <p>Lynx Storefront {new Date().getFullYear()} &copy;</p>
+        <p className={css.footerCopy}>
+          Lynx Storefront {new Date().getFullYear()} &copy;
+        </p>
       </Container>
     </section>
   );
