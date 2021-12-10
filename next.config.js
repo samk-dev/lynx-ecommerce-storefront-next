@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
-const { ecommerceDriverConfig } = require('./services/common/appConfig');
+const { driversConfig } = require('./config');
 
-module.exports = ecommerceDriverConfig({
+module.exports = driversConfig({
   shop: {
-    driver: process.env.SHOP_DRIVER,
+    driver: 'shopify',
   },
   reactStrictMode: true,
 });
 
-console.log('nextConfig', JSON.stringify(module.exports, null, 2));
+if (process.env.NODE_ENV === 'development') {
+  console.log('nextConfig', JSON.stringify(module.exports, null, 2));
+}
