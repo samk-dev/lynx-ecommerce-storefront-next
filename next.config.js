@@ -3,7 +3,7 @@ const { ecommerceDriverConfig } = require('./services/common/appConfig');
 
 module.exports = ecommerceDriverConfig({
   shop: {
-    driver: process.env.SHOP_DRIVER,
+    driver: 'shopify',
   },
   reactStrictMode: true,
 });
