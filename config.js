@@ -1,3 +1,12 @@
+/**
+ * Global App configuration
+ *
+ * @desc Merges services config files into next.config.js
+ *   && adds path alieses to each service for easier access
+ *
+ * @param {next.config.js}
+ *
+ */
 const fs = require('fs');
 const path = require('path');
 const merge = require('deepmerge');
