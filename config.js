@@ -15,12 +15,12 @@ const prettier = require('prettier');
 const currentDIR = process.cwd();
 
 function driversConfig(defaultConfig = {}) {
-  const ecommerceDriver = defaultConfig?.shop?.driver;
+  const ecommerceDriver = defaultConfig?.drivers?.shop;
   const ecommerceAlias = `services/shop/api/${ecommerceDriver}`;
 
   if (!ecommerceDriver) {
     throw new Error(
-      "Shop driver name is missing, please provide a valid driver name in your next.config.js > shop > driver. Ex: 'woocommerce'"
+      "Shop driver name is missing, please provide a valid driver name in your next.config.js > drivers > shop. Ex: 'woocommerce'"
     );
   }
 

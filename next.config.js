@@ -2,8 +2,8 @@
 const { driversConfig } = require('./config');
 
 module.exports = driversConfig({
-  shop: {
-    driver: 'shopify',
+  drivers: {
+    shop: 'shopify',
   },
   reactStrictMode: true,
 });
