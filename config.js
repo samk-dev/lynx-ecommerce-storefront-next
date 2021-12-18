@@ -22,7 +22,7 @@ const currentDIR = process.cwd();
  * @param alias: string
  * @param aliasName: string
  */
-const updateAliases = (alias, aliasName) => {
+const updateServicesAliases = (alias, aliasName) => {
   const tsPath = path.join(currentDIR, 'tsconfig.json');
   const tsConfig = require(tsPath);
 
@@ -54,7 +54,7 @@ function driversConfig(defaultConfig = {}) {
 
   const nextConfig = merge(defaultConfig, shopConfig);
 
-  updateAliases(shopAliasName, shopAlias);
+  updateServicesAliases(shopAliasName, shopAlias);
 
   return nextConfig;
 }
